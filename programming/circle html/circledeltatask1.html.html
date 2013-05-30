@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+        <title>Circle</title>
+        <style>
+                        body{
+                                background: black;
+                        }
+            #circle {
+                position: absolute;
+                width: 6px;
+                border-radius: 100%;
+                box-shadow: #662222 0px 0px 5px 5px;
+                height: 6px;
+                top:350px;
+                left:400px;
+                background: red;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        var w, h;
+ 
+        if (typeof window.innerWidth != 'undefined' && typeof window.innerHeight != 'undefined') {
+            w = window.innerWidth / 5 * 2;
+            h = window.innerHeight / 5 * 2;
+        } else {
+            w = document.documentElement.clientWidth / 5 * 2;
+            h = document.documentElement.clientHeight / 5 * 2;
+        }
+ 
+        var coordmin = Math.min(w, h);
+ 
+        function go() {
+            setInterval(circle, 10);
+        }
+ 
+        var u = 0;
+ 
+        function circle() {
+ 
+            var e = document.getElementById('circle');
+ 
+            width = 10;
+            height = 10;
+            offsetX = w * 5 / 4;
+            offsetY = h * 5 / 4;
+ 
+            inc = (2 * Math.PI) / 500;
+ 
+            if (u >= 2 * Math.PI) {
+                u = 0;
+            }
+            u += inc;
+            e.style.left = Math.cos(u) * coordmin + offsetX + 'px';
+            e.style.top = Math.sin(u) * coordmin + offsetY + 'px';
+        }
+    </script>
+    </head>
+   
+    <body onload="go()">
+        <div id="circle"></div>
+    </body>
+ 
+</html>

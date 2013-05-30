@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+        <title>star</title>
+        <style type="text/css">
+		
+		div#imgsize {
+		 position: relative;
+		 height: 100px;
+		 width: 10px;
+		 }
+		 
+		div#star1, div#star2, div#star3, div#star4, div#star5{
+		height:70px;
+		width:70px;
+		background-image:url('star1.gif');
+		}
+		 
+		 </style>
+		 <script type="text/javascript">
+		    
+			function rate (n,m){
+                 
+				switch(n){
+					case 5:
+						star5.style.backgroundImage = "url('star" + (m+1) + ".jpg')";
+					case 4:
+						star4.style.backgroundImage = "url('star" + (m+1) + ".jpg')";
+					case 3:
+						star3.style.backgroundImage = "url('star" + (m+1) + ".jpg')";
+					case 2:
+						star2.style.backgroundImage = "url('star" + (m+1) + ".jpg')";
+					case 1:
+						star1.style.backgroundImage = "url('star" + (m+1) + ".jpg')";
+					}
+				}
+		 </script>
+    </head> 		 
+   		 
+<body>
+<div id="imgsize">
+<div id="star1" onmouseover='rate(1,1)' onmouseout='rate(1,2)'></div>
+<div id="star2" onmouseover='rate(2,1)' onmouseout='rate(2,2)'></div>
+<div id="star3" onmouseover='rate(3,1)' onmouseout='rate(3,2)'></div>
+<div id="star4" onmouseover='rate(4,1)' onmouseout='rate(4,2)'></div>
+<div id="star5" onmouseover='rate(5,1)' onmouseout='rate(5,2)'></div>
+</div>
+	 
+</body>
+</html>
